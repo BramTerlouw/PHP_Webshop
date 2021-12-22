@@ -1,10 +1,8 @@
 <?php
-class PatternRouter
-{
 
-    private function stripParameters($uri)
-    {
-        if (str_contains($uri, '?')) {
+class PatternRouter {
+    private function stripParameters($uri) {
+        if(str_contains($uri, '?')) {
             $uri = substr($uri, 0, strpos($uri, '?'));
         }
         return $uri;
@@ -12,26 +10,23 @@ class PatternRouter
 
     public function route($uri)
     {
-        // Path algorithm
-        // pattern = /controller/method
-
-        // check if we are requesting an api route
+        // check for api route
         $api = false;
         if (str_starts_with($uri, "api/")) {
             $uri = substr($uri, 4);
             $api = true;
         }
 
+
         // set default controller/method
         $defaultcontroller = 'home';
         $defaultmethod = 'index';
 
-        // ignore query parameters
         $uri = $this->stripParameters($uri);
-
-        // read controller/method names from URL
         $explodedUri = explode('/', $uri);
 
+
+        // check and set default or other value
         if (!isset($explodedUri[0]) || empty($explodedUri[0])) {
             $explodedUri[0] = $defaultcontroller;
         }
@@ -42,10 +37,11 @@ class PatternRouter
         }
         $methodName = $explodedUri[1];
 
+
         // load the file with the controller class
-        $filename = __DIR__ . '/controllers/' . $controllerName . '.php';
+        $filename = __DIR__ . '/controller/' . $controllerName . '.php';
         if ($api) {
-            $filename = __DIR__ . '/api/controllers/' . $controllerName . '.php';
+            $filename = __DIR__ . '/api/controller/' . $controllerName . '.php';
         }
         if (file_exists($filename)) {
             require $filename;
@@ -53,6 +49,8 @@ class PatternRouter
             http_response_code(404);
             die();
         }
+
+        
         // dynamically call relevant controller method
         try {
             $controllerObj = new $controllerName;
@@ -63,3 +61,4 @@ class PatternRouter
         }
     }
 }
+?>
