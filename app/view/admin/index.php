@@ -6,7 +6,7 @@ require __DIR__ . '/../nav.php';
 <body>
 
     <!-- Form for adding a new product to the website -->
-    <div class="container mt-5 p-2 w-50 border">
+    <div class="container mt-5 p-2 col-12 col-md-6 border">
         <h1>Add product</h1>
         <form action="/admin/insert" method="POST">
             <div class="form-group">
@@ -39,7 +39,7 @@ require __DIR__ . '/../nav.php';
 
 
     <!-- Form for editing an existing product -->
-    <div class="container mt-5 p-2 w-50 border">
+    <div class="container mt-5 p-2 col-12 col-md-6 border">
         <h1>Edit product</h1>
         
         <!-- dropdown connected to js script to change values depending on chosen id -->
@@ -84,7 +84,7 @@ require __DIR__ . '/../nav.php';
 
     
     <!-- Form for deleting a product -->
-    <div class="container mt-5 p-2 w-50 border">
+    <div class="container mt-5 p-2 col-12 col-md-6 border">
         <h1>Delete product</h1>
         <table class="table">
                 <thead>
