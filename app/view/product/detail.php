@@ -24,7 +24,7 @@ require __DIR__ . '/../nav.php';
                 quantity: document.getElementById("quantity").value,
                 id: product_id
             };
-            fetch("http://localhost/api/cart/index", { // <-- post through api
+            fetch("/api/cart/index", { // <-- post through api
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ require __DIR__ . '/../nav.php';
                 });
         }
 
-        fetch('http://localhost/api/product/detail' + window.location.search) // <-- call to api route
+        fetch('/api/product/detail' + window.location.search) // <-- call to api route
             .then(result => result.json()) // <-- get json
             .then(data => {
 
