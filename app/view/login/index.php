@@ -4,7 +4,7 @@ require __DIR__ . '/../head.php';
 
 <body>
 
-<div class="container w-25 mt-5 p-5">
+<div class="container mt-5 p-5 col-10 col-md-6 col-lg-4 col-xl-3">
   <form action="login/validate" method="post" class="form-signin">
   
   <!--header  -->
