@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="container">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
       
@@ -15,7 +15,15 @@
         </li>
       </ul>
 
-    </div>    
+    </div>
+    <div class="mx-auto order-0">
+      <a class="navbar-brand mx-auto" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    
+    
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
 
       <!-- Navbar items right -->

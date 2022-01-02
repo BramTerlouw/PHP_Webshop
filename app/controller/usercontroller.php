@@ -1,7 +1,6 @@
 <?php
 
 require __DIR__ . '/../service/userservice.php';
-require __DIR__ . '/controller.php';
 
 class UserController {
 

@@ -1,6 +1,5 @@
 <?php
 require __DIR__ . '/../service/loginservice.php';
-//require __DIR__ . '/../model/user.php';
 
 class LoginController
 {

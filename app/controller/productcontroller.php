@@ -1,7 +1,6 @@
 <?php
 
 require __DIR__ . '/../service/productservice.php';
-require __DIR__ . '/controller.php';
 
 class ProductController{
     private $productService;
