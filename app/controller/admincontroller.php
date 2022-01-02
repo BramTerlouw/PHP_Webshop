@@ -3,7 +3,7 @@
 require __DIR__ . '/../service/adminservice.php';
 require __DIR__ . '/controller.php';
 
-class AdminController extends Controller
+class AdminController
 {
 
     private $adminService;

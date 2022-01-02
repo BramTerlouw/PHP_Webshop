@@ -3,7 +3,7 @@
 require __DIR__ . '/../service/paymentservice.php';
 require __DIR__ . '/controller.php';
 
-class PaymentController extends Controller
+class PaymentController
 {
     private $paymentService;
 

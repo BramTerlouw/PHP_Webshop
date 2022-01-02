@@ -3,7 +3,7 @@
 require __DIR__ . '/../service/productservice.php';
 require __DIR__ . '/controller.php';
 
-class ProductController extends Controller{
+class ProductController{
     private $productService;
 
     function __construct()
@@ -16,9 +16,6 @@ class ProductController extends Controller{
     }
 
     public function detail() {
-        // $model = $this->productService->getById($_GET['id']);
-        // $this->displayView($model);
-
         require __DIR__ . '/../view/product/detail.php';
     }
 }
