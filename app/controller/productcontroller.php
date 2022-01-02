@@ -17,6 +17,7 @@ class ProductController extends Controller{
 
     public function detail() {
         $model = $this->productService->getById($_GET['id']);
-        $this->displayView($model);
+        //$this->displayView($model);
+        require __DIR__ . '/../product/detail.php?id=1';
     }
 }
