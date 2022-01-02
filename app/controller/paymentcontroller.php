@@ -16,8 +16,8 @@ class PaymentController extends Controller
     {
         // if logged user exists, show page with user model, else show empty page
         if (isset($_SESSION['logged_User'])) {
-            $logged_User = $this->paymentService->getUser($_SESSION['logged_User']);
-            $this->displayView($logged_User);
+            $model = $this->paymentService->getUser($_SESSION['logged_User']);
+            require __DIR__ . '/../view/payment/index.php';
         } else {
             require __DIR__ . '/../view/payment/index.php';
         }

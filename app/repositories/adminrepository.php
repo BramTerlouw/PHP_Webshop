@@ -36,7 +36,6 @@ class AdminRepository extends Repository {
 
             $stmt->execute();
 
-
         } catch (PDOException $e) {
             echo $e;
         }
