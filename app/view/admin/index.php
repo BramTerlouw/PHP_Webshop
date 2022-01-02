@@ -17,14 +17,23 @@ require __DIR__ . '/../nav.php';
 
             <div class="form-group">
                 <label for="inputDescription">Desription:</label>
-                <textarea class="form-control mb-2" name="inputDescription" rows="3"></textarea required>
+                <textarea class="form-control mb-2" name="inputDescription" placeholder="Product description..." rows="3"></textarea required>
         </div>
 
         <div class="form-group">
             <label for="inputPrice">Price:</label>
-            <input type="text" class="form-control" name="inputPrice" placeholder="Price..." required>
+            <input type="text" class="form-control mb-2" name="inputPrice" placeholder="Product price..." required>
         </div>
-        <button type="submit" name="submit" class="btn btn-primary mt-2">Add</button>
+
+        <div class="form-group">
+            <label for="inputType-Add">Type:</label><br>
+            <select class="mt-2" id="dropdown-add" name="inputType-Add">
+                <option value="Motherboard">Motherboard</option>
+                <option value="CPU">CPU</option>
+                <option value="SSD">SSD</option>
+            </select>
+        </div>
+        <button type="submit" name="submit" class="btn btn-primary mt-5">Add</button>
     </form>
     </div>
 
@@ -58,7 +67,16 @@ require __DIR__ . '/../nav.php';
                 <label for="inputPrice">Price:</label>
                 <input type="text" class="form-control mb-2" id="inputPrice" name="inputPrice" placeholder="Price..." required>
             </div>
-            <button type="submit" name="submit" class="btn btn-primary">Edit</button>
+
+            <div class="form-group">
+            <label for="inputType-edit">Type:</label><br>
+            <select class="mt-2" id="dropdown-edit" name="inputType-edit">
+                <option value="Motherboard">Motherboard</option>
+                <option value="CPU">CPU</option>
+                <option value="SSD">SSD</option>
+            </select>
+        </div>
+            <button type="submit" name="submit" class="btn btn-primary mt-5">Edit</button>
     </form>
     </div>
     </div>
@@ -111,6 +129,7 @@ require __DIR__ . '/../nav.php';
                 document.getElementById("inputDescription").innerHTML = data.description;
                 document.getElementById("inputPrice").setAttribute("value", data.price);
                 document.getElementById("id").setAttribute("value", data.id);
+                document.getElementById("dropdown-edit").value = data.type;
             })
             .catch(error => console.log(error));
         }

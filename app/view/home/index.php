@@ -32,7 +32,7 @@ require __DIR__ . '/../nav.php';
 
                     <div class="form-group">
                         <label for="inputPassword">Password:</label>
-                        <input type="password" class="form-control" name="inputPassword" required>
+                        <input type="password" class="form-control" name="inputPassword" placeholder="Enter password..." required>
                     </div>
                     <button type="submit" class="btn btn-primary mt-2">Submit</button>
                 </form>

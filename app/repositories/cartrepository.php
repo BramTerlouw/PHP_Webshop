@@ -12,7 +12,14 @@ class CartRepository extends Repository
 
             $sqlquery = "SELECT * FROM products WHERE id IN ($array_Question_marks)";
             $stmt = $this->connection->prepare($sqlquery);
-            $stmt->execute(array_keys($cart_products));
+
+            $index = 1;
+            foreach($cart_products as $key => $value) {
+                $stmt->bindValue($index, $key, PDO::PARAM_INT);
+                $index++;
+            }
+
+            $stmt->execute();
             
             $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $products;

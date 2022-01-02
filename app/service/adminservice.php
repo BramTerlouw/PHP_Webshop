@@ -10,15 +10,15 @@ class AdminService {
     }
 
     // insert new product
-    public function insert($productName, $productDescription, $productPrice) {
+    public function insert($productName, $productDescription, $productPrice, $productType) {
         $repository = new AdminRepository();
-        $repository->insert($productName, $productDescription, $productPrice);
+        $repository->insert($productName, $productDescription, $productPrice, $productType);
     }
 
     // edit product
-    public function update($product_id, $productName, $productDescription, $productPrice) {
+    public function update($product_id, $productName, $productDescription, $productPrice, $productType) {
         $repository = new AdminRepository();
-        $repository->update($product_id, $productName, $productDescription, $productPrice);
+        $repository->update($product_id, $productName, $productDescription, $productPrice, $productType);
     }
 
     // delete product

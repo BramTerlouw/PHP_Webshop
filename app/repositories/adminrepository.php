@@ -22,16 +22,17 @@ class AdminRepository extends Repository {
         }
     }
     
-    public function insert($productName, $productDescription, $productPrice) {
+    public function insert($productName, $productDescription, $productPrice, $productType) {
         
         try {
-            $sqlquery = "INSERT INTO products (name, description, price) VALUES(:name, :description, :price)";
+            $sqlquery = "INSERT INTO products (name, description, price, type) VALUES(:name, :description, :price, :type)";
             $stmt = $this->connection->prepare($sqlquery);
             
             // bind param to stmt
             $stmt->bindParam(':name', $productName);
             $stmt->bindParam(':description', $productDescription);
             $stmt->bindParam(':price', $productPrice);
+            $stmt->bindParam(':type', $productType);
 
             $stmt->execute();
 
@@ -41,9 +42,9 @@ class AdminRepository extends Repository {
         }
     }
 
-    public function update($product_id, $productName, $productDescription, $productPrice) {
+    public function update($product_id, $productName, $productDescription, $productPrice, $productType) {
         try {
-            $sqlquery = "UPDATE products SET name=:name, description=:description, price=:price WHERE id=:id";
+            $sqlquery = "UPDATE products SET name=:name, description=:description, price=:price, type=:type WHERE id=:id";
             $stmt = $this->connection->prepare($sqlquery);
 
             // bind params to stmt
@@ -51,6 +52,7 @@ class AdminRepository extends Repository {
             $stmt->bindParam(':description', $productDescription);
             $stmt->bindParam(':price', $productPrice);
             $stmt->bindParam(':id', $product_id);
+            $stmt->bindParam(':type', $productType);
 
             $stmt->execute();
         } catch (PDOException $e) {
