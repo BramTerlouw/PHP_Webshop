@@ -23,7 +23,7 @@ class CartController extends Controller
             $model = $this->cartService->getAll($cart_products, $array_Question_marks);
         }
         else { // else show empty array
-            $model = $this->displayView(array());
+            $model = array();
         }
 
         require __DIR__ . '/../view/cart/index.php';
