@@ -17,7 +17,7 @@ try {
     id SERIAL PRIMARY KEY,
     name varchar(50) NOT NULL,
     description varchar(1000) NOT NULL,
-    price int(11) NOT NULL,
+    price int NOT NULL,
     type varchar(30) NOT NULL
     )");
 } catch (PDOException $e) {
