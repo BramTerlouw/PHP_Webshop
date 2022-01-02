@@ -15,7 +15,7 @@ class AdminController extends Controller
     public function index()
     {
         $model = $this->adminService->getAll();
-        $this->displayView($model);
+        require __DIR__ . '/../view/admin/index.php';
     }
 
     public function insert()
