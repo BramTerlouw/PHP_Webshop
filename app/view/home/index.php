@@ -11,26 +11,26 @@ require __DIR__ . '/../nav.php';
         <p>Here you can buy all your hardware products you desire.</p>
 
         <?php if (!isset($_SESSION['logged_User'])) { ?>
-            <div class="border w-75 mt-5 p-2">
+            <div class="border mt-5 p-2">
                 <!-- registration form for customers -->
                 <h2>To enjoy the ultimate experience, register yourself down below:</h2>
-                <form class="w-25" action="user/insert" method="POST">
-                    <div class="form-group">
+                <form class="" action="user/insert" method="POST">
+                    <div class="form-group col-12 col-md-4">
                         <label for="inputName">Full name:</label>
                         <input type="text" class="form-control" name="inputName" placeholder="Enter name..." required>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group col-12 col-md-4">
                         <label for="inputEmail">Email address:</label>
                         <input type="email" class="form-control" name="inputEmail" placeholder="Enter email..." required>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group col-12 col-md-4">
                         <label for="inputAddress">Address:</label>
                         <input type="text" class="form-control" name="inputAddress" placeholder="Enter Address..." required>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group col-12 col-md-4">
                         <label for="inputPassword">Password:</label>
                         <input type="password" class="form-control" name="inputPassword" placeholder="Enter password..." required>
                     </div>
