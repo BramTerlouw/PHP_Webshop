@@ -10,12 +10,12 @@ require __DIR__ . '/../nav.php';
         <h1 class="mt-5">Welcome to Bram's hardware store</h1>
         <p>Here you can buy all your hardware products you desire.</p>
 
+        <!-- registration form for customers // use responsive grid columns -->
         <?php if (!isset($_SESSION['logged_User'])) { ?>
             <div class="border mt-5 p-2">
-                <!-- registration form for customers -->
                 <h2>To enjoy the ultimate experience, register yourself down below:</h2>
                 <form class="" action="user/insert" method="POST">
-                    <div class="form-group col-12 col-md-4">
+                    <div class="form-group col-12 col-md-4"> 
                         <label for="inputName">Full name:</label>
                         <input type="text" class="form-control" name="inputName" placeholder="Enter name..." required>
                     </div>

@@ -51,7 +51,6 @@ require __DIR__ . '/../nav.php';
                 description_Header.innerHTML = "Description: ";
 
                 const description = document.createElement("p");
-                description.className = "w-50";
                 description.innerHTML = data.description;
 
                 const price = document.createElement("p");

@@ -29,7 +29,6 @@ require __DIR__ . '/../nav.php';
 
             // if selection is default show all, else show only of type
             if (document.getElementById("dropdown").value == "default") {
-                //showProducts('http://localhost/api/product');
                 showProducts('/api/product');
             } else {
                 showProducts('/api/product/index_Filtered?type=' + document.getElementById("dropdown").value);
@@ -44,7 +43,7 @@ require __DIR__ . '/../nav.php';
 
                         //  Create card
                         const column = document.createElement("div");
-                        column.className = "col-sm-6 col-lg-3";
+                        column.className = "col-sm-6 col-lg-3 mt-5";
 
                         const card = document.createElement("div");
                         card.className = "card h-100";
