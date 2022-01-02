@@ -120,7 +120,7 @@ require __DIR__ . '/../nav.php';
     <script>
         function showForm()
         {
-            fetch('http://localhost/api/product/detail?id=' + document.getElementById("dropdown").value) // <-- call to api route
+            fetch('/api/product/detail?id=' + document.getElementById("dropdown").value) // <-- call to api route
             .then(result => result.json()) // <-- get json
             .then(data => {
                 
