@@ -29,9 +29,10 @@ require __DIR__ . '/../nav.php';
 
             // if selection is default show all, else show only of type
             if (document.getElementById("dropdown").value == "default") {
-                showProducts('http://localhost/api/product');
+                //showProducts('http://localhost/api/product');
+                showProducts('/api/product');
             } else {
-                showProducts('http://localhost/api/product/index_Filtered?type=' + document.getElementById("dropdown").value);
+                showProducts('/api/product/index_Filtered?type=' + document.getElementById("dropdown").value);
             }
         }
 
