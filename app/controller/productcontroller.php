@@ -18,6 +18,6 @@ class ProductController extends Controller{
     public function detail() {
         // $model = $this->productService->getById($_GET['id']);
         // $this->displayView($model);
-        header('Location: product/detail?id=' . '1');
+        header('Location: /product/detail?id=' . '1');
     }
 }
