@@ -20,7 +20,7 @@ class CartController extends Controller
 
         // if session var then show cart products
         if ($cart_products) {
-            $model = $this->displayView($this->cartService->getAll($cart_products, $array_Question_marks));
+            $model = $this->cartService->getAll($cart_products, $array_Question_marks);
         }
         else { // else show empty array
             $model = $this->displayView(array());
