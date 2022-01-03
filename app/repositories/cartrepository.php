@@ -5,21 +5,16 @@ require __DIR__ . '/repository.php';
 
 class CartRepository extends Repository
 {
-    public function getAll($cart_products, $array_Question_marks)
+    public function getAll($cart_products)
     {
-        
+
+        // get all products that are in cart
         try {
 
+            $array_Question_marks = implode(',', array_fill(0, count($cart_products), '?')); // <-- get the amount of products and turn into ?
             $sqlquery = "SELECT * FROM products WHERE id IN ($array_Question_marks)";
             $stmt = $this->connection->prepare($sqlquery);
-
-            $index = 1;
-            foreach($cart_products as $key => $value) {
-                $stmt->bindValue($index, $key, PDO::PARAM_INT);
-                $index++;
-            }
-
-            $stmt->execute();
+            $stmt->execute($cart_products);
             
             $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $products;

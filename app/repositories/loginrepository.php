@@ -28,6 +28,8 @@ class LoginRepository extends Repository
     }
 
     public function getUser($userEmail) {
+        
+        // get user from database
         try {
             $sqlquery = "SELECT * FROM users WHERE email=:email";
             $stmt = $this->connection->prepare($sqlquery);

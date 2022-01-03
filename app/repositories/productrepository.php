@@ -43,6 +43,8 @@ class ProductRepository extends Repository {
     }
 
     function getByType($type) {
+        
+        // get product by type
         try {
             $sqlquery = "SELECT * FROM products WHERE type=:type";
             $stmt = $this->connection->prepare($sqlquery);

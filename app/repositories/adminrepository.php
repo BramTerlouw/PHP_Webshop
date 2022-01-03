@@ -24,6 +24,7 @@ class AdminRepository extends Repository {
     
     public function insert($productName, $productDescription, $productPrice, $productType) {
         
+        // insert new product into db
         try {
             $sqlquery = "INSERT INTO products (name, description, price, type) VALUES(:name, :description, :price, :type)";
             $stmt = $this->connection->prepare($sqlquery);
@@ -42,6 +43,8 @@ class AdminRepository extends Repository {
     }
 
     public function update($product_id, $productName, $productDescription, $productPrice, $productType) {
+        
+        // Update product in the db
         try {
             $sqlquery = "UPDATE products SET name=:name, description=:description, price=:price, type=:type WHERE id=:id";
             $stmt = $this->connection->prepare($sqlquery);
@@ -61,6 +64,7 @@ class AdminRepository extends Repository {
 
     public function delete($product_id) {
 
+        // delete product from database
         try {
             $sqlquery = "DELETE FROM products WHERE id = :id";
             $stmt = $this->connection->prepare($sqlquery);

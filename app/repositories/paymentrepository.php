@@ -8,6 +8,7 @@ class PaymentRepository extends Repository
 
     public function getUser($userEmail)
     {
+        // get user from database
         try {
             
             $sqlquery = 'SELECT * FROM users WHERE email=:email';

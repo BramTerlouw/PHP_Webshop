@@ -15,11 +15,10 @@ class CartController
     {
         // if session var exists, cart_products is session var, otherwise a array
         $cart_products = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
-        $array_Question_marks = implode(',', array_fill(0, count($cart_products), '?')); // <-- get the amount of products and turn into ?
 
         // if session var then show cart products
         if ($cart_products) {
-            $model = $this->cartService->getAll($cart_products, $array_Question_marks);
+            $model = $this->cartService->getAll($cart_products);
         }
         else { // else show empty array
             $model = array();

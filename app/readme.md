@@ -2,6 +2,6 @@ Inlog gegevens user
 test@email.com
 wachtwoord
 
-Inloggegevens admin
+Inloggegevens admin (voor toegang tot admin scherm)
 mark@mail.com
 wachtwoord

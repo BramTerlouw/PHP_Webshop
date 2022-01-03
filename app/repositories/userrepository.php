@@ -6,6 +6,7 @@ class UserRepository extends Repository {
     public function insertUser($userName, $userEmail, $userAddress, $userPassword) {
         $role = "user"; // <- since we are adding only normal users, the default role is user
         
+        // insert new user in db
         try {
             $sqlquery = "INSERT INTO users (name, email, address, role, password) VALUES(:name, :email, :address, :role, :password)";
             $stmt = $this->connection->prepare($sqlquery);
