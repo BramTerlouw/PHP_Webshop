@@ -10,11 +10,18 @@ class CartRepository extends Repository
 
         // get all products that are in cart
         try {
-
+            
             $array_Question_marks = implode(',', array_fill(0, count($cart_products), '?')); // <-- get the amount of products and turn into ?
-            $sqlquery = "SELECT * FROM products WHERE id IN ($array_Question_marks)";
+            $sqlquery = "SELECT id, name, description, price, type FROM products WHERE id IN ($array_Question_marks)";
             $stmt = $this->connection->prepare($sqlquery);
-            $stmt->execute($cart_products);
+
+            $index = 1;
+            foreach($cart_products as $key => $value) {
+                $stmt->bindValue($index, $key, PDO::PARAM_INT);
+                $index++;
+            }
+
+            $stmt->execute();
             
             $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $products;
@@ -25,7 +32,7 @@ class CartRepository extends Repository
 
     function addToCart($product_id, $quantity)
     {
-        $sqlQuery = "SELECT * FROM products WHERE id=:id";
+        $sqlQuery = "SELECT id, name, description, price, type FROM products WHERE id=:id";
         $stmt = $this->connection->prepare($sqlQuery);
         $stmt->bindParam(':id', $product_id);
 

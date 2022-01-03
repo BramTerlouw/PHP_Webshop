@@ -11,7 +11,7 @@ class PaymentRepository extends Repository
         // get user from database
         try {
             
-            $sqlquery = 'SELECT * FROM users WHERE email=:email';
+            $sqlquery = 'SELECT id, name, email, address, role, password FROM users WHERE email=:email';
             $stmt = $this->connection->prepare($sqlquery);
 
             // bind params to stmt

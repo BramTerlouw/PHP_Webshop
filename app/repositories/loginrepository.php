@@ -11,7 +11,7 @@ class LoginRepository extends Repository
         try {
 
             // count users with given email and password
-            $sqlquery = "SELECT COUNT(*) FROM users WHERE email=:email AND password=:password";
+            $sqlquery = "SELECT COUNT(id) FROM users WHERE email=:email AND password=:password";
             $stmt = $this->connection->prepare($sqlquery);
 
             // bind params to stmt
@@ -31,7 +31,7 @@ class LoginRepository extends Repository
         
         // get user from database
         try {
-            $sqlquery = "SELECT * FROM users WHERE email=:email";
+            $sqlquery = "SELECT id, name, email, address, role, password FROM users WHERE email=:email";
             $stmt = $this->connection->prepare($sqlquery);
 
             $stmt->bindParam(':email', $userEmail);

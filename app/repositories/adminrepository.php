@@ -9,7 +9,7 @@ class AdminRepository extends Repository {
         
         // get all products
         try {
-            $stmt = $this->connection->prepare("SELECT * FROM products");
+            $stmt = $this->connection->prepare("SELECT id, name, description, price, type FROM products");
             $stmt->execute();
 
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Product');

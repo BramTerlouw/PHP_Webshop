@@ -9,7 +9,7 @@ class ProductRepository extends Repository {
         
         // get all products
         try {
-            $stmt = $this->connection->prepare("SELECT * FROM products");
+            $stmt = $this->connection->prepare("SELECT id, name, description, price, type FROM products");
             $stmt->execute();
 
             $stmt->setFetchMode(PDO::FETCH_CLASS, 'Product');
@@ -26,7 +26,7 @@ class ProductRepository extends Repository {
         
         // get product by id
         try {
-            $sqlquery = "SELECT * FROM products WHERE id=:id";
+            $sqlquery = "SELECT id, name, description, price, type FROM products WHERE id=:id";
             $stmt = $this->connection->prepare($sqlquery);
             
             // bind param to stmt
@@ -46,7 +46,7 @@ class ProductRepository extends Repository {
         
         // get product by type
         try {
-            $sqlquery = "SELECT * FROM products WHERE type=:type";
+            $sqlquery = "SELECT id, name, description, price, type FROM products WHERE type=:type";
             $stmt = $this->connection->prepare($sqlquery);
             
             // bind param to stmt
